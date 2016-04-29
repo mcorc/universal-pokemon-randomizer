@@ -92,7 +92,7 @@ public class Pokemon implements Comparable<Pokemon> {
     public void randomizeStatsWithinBST(Random random) {
         if (number == 292) {
             // Shedinja is horribly broken unless we restrict him to 1HP.
-            int bst = bst() - 51;
+            int bst = bst() - 46;
 
             // Make weightings
             double atkW = random.nextDouble(), defW = random.nextDouble();
@@ -101,18 +101,18 @@ public class Pokemon implements Comparable<Pokemon> {
             double totW = atkW + defW + spaW + spdW + speW;
 
             hp = 1;
-            attack = (int) Math.max(1, Math.round(atkW / totW * bst)) + 10;
-            defense = (int) Math.max(1, Math.round(defW / totW * bst)) + 10;
-            spatk = (int) Math.max(1, Math.round(spaW / totW * bst)) + 10;
-            spdef = (int) Math.max(1, Math.round(spdW / totW * bst)) + 10;
-            speed = (int) Math.max(1, Math.round(speW / totW * bst)) + 10;
+            attack = (int) Math.max(1, Math.round(atkW / totW * bst)) + 9;
+            defense = (int) Math.max(1, Math.round(defW / totW * bst)) + 9;
+            spatk = (int) Math.max(1, Math.round(spaW / totW * bst)) + 9;
+            spdef = (int) Math.max(1, Math.round(spdW / totW * bst)) + 9;
+            speed = (int) Math.max(1, Math.round(speW / totW * bst)) + 9;
 
             // Fix up special too
             special = (int) Math.ceil((spatk + spdef) / 2.0f);
 
         } else {
             // Minimum 20 HP, 10 everything else
-            int bst = bst() - 70;
+            int bst = bst() - 64;
 
             // Make weightings
             double hpW = random.nextDouble(), atkW = random.nextDouble(), defW = random.nextDouble();
@@ -120,12 +120,12 @@ public class Pokemon implements Comparable<Pokemon> {
 
             double totW = hpW + atkW + defW + spaW + spdW + speW;
 
-            hp = (int) Math.max(1, Math.round(hpW / totW * bst)) + 20;
-            attack = (int) Math.max(1, Math.round(atkW / totW * bst)) + 10;
-            defense = (int) Math.max(1, Math.round(defW / totW * bst)) + 10;
-            spatk = (int) Math.max(1, Math.round(spaW / totW * bst)) + 10;
-            spdef = (int) Math.max(1, Math.round(spdW / totW * bst)) + 10;
-            speed = (int) Math.max(1, Math.round(speW / totW * bst)) + 10;
+            hp = (int) Math.max(1, Math.round(hpW / totW * bst)) + 19;
+            attack = (int) Math.max(1, Math.round(atkW / totW * bst)) + 9;
+            defense = (int) Math.max(1, Math.round(defW / totW * bst)) + 9;
+            spatk = (int) Math.max(1, Math.round(spaW / totW * bst)) + 9;
+            spdef = (int) Math.max(1, Math.round(spdW / totW * bst)) + 9;
+            speed = (int) Math.max(1, Math.round(speW / totW * bst)) + 9;
 
             // Fix up special too
             special = (int) Math.ceil((spatk + spdef) / 2.0f);
