@@ -136,6 +136,19 @@ public class Pokemon implements Comparable<Pokemon> {
             // re roll
             randomizeStatsWithinBST(random);
         }
+        
+        // Additional re roll checks to prevent useless pokemon from being generated
+        if (((defense / spdef) >= 4 ) || ((spdef / defense) >= 4)){
+    	    randomizeStatsWithinBST(random);
+        }
+        
+        if( ((bst()/(attack + spatk)) >= 4) && ((bst()/hp) >= 7) && ((bst()/(defense + spdef)) >= 2) ){
+        	randomizeStatsWithinBST(random);
+        }
+        
+        if( ((bst()/(hp + defense + spdef)) >= 2) && ((bst()/speed) >= 9) ){
+        	randomizeStatsWithinBST(random);
+        }
 
     }
 
